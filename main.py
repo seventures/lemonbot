@@ -1,5 +1,6 @@
 # imports
 import discord
+import os
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -28,3 +29,10 @@ async def topic(interaction: discord.Interaction, pings: discord.Role):
 
     embed = discord.Embed(title="Topic", description=choice(topics), color=discord.Color.yellow())
     await interaction.response.send_message(embed=embed, content=pings.mention)
+
+@bot.event
+async def on_ready():
+    await bot.tree.sync()
+    print(f"Logged in as {bot.user}")
+
+bot.run(os.getenv("TOKEN"))
