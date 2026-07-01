@@ -20,7 +20,15 @@ async def ping(interaction: discord.Interaction):
 @app_commands.describe(pings="Users to mention")
 async def topic(interaction: discord.Interaction, pings: discord.Role = None):
     topics = [
-        "*taps mic* yo is this shit working?"
+        "Water before AND after toothpaste.",
+        "A hotdog is NOT a sandwich.",
+        "Never have to sleep, eat, or breathe?",
+        "SOCK SOCK SHOE SHOE ALWAYS",
+        "i hate thin crust",
+        "waffles are just grilled pancakes",
+        "boneless wings = chicken nuggets",
+        "pancakes > waffles",
+        "will gta 6 or weaponfall season 2 come out first?"
     ]
 
     if pings is not None:
